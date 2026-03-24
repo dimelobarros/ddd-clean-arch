@@ -1,5 +1,5 @@
-import { Endereco } from "../../Endereco/Domain/Endereco";
-import { Usuario } from "../../Usuario/Domain/Usuario";
+import { Endereco } from "./Endereco";
+import { Usuario } from "./Usuario";
 
 
 export class Paciente extends Usuario {

@@ -1,5 +1,5 @@
-import { Documento } from "../../Documento/Domain/Documento";
-import { Telefone } from "../../Telefone/Domain/Telefone";
+import { Documento } from "./Documento";
+import { Telefone } from "./Telefone";
 
 
 
