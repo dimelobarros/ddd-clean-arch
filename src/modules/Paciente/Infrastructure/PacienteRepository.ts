@@ -12,23 +12,23 @@ export class PacienteRepository{
 
 
     // INSERIR paciente:
-    async inserirpaciente(paciente: Paciente){
+    async inserirPaciente(paciente: Paciente){
         PacienteRepository.pacientes.push(paciente);
     }
 
 
     // BUSCAR POR ID:
-    async buscarpacientePorId(idPaciente: number){
+    async buscarPacientePorId(idPaciente: number){
         return PacienteRepository.pacientes.find(pac => pac.id === idPaciente);
     }
 
     // REMOVER paciente:
-    async removerpaciente(idPaciente: number){
+    async removerPaciente(idPaciente: number){
         PacienteRepository.pacientes = PacienteRepository.pacientes.filter(pac => pac.id !== idPaciente);
     }
 
     // ATUALIZAR paciente:
-    async atualizarpaciente(paciente: Paciente){
+    async atualizarPaciente(paciente: Paciente){
 
         // Buscando a posição em que o paciente solicitado para autualizar está dentro do array.
         const indice = PacienteRepository.pacientes.findIndex(pac => pac.id === paciente.id);
