@@ -10,6 +10,8 @@ export class Documento {
         this._tipoDocumento = tipoDoc;
     }
 
+
+
     get idDocumento() {
         return this._idDocumento;
     }
@@ -22,6 +24,8 @@ export class Documento {
         return this._tipoDocumento;
     }
 
+
+
     set numeroDocumento(numeroDocumento: string) {
         this._numeroDocumento = numeroDocumento;
     }
@@ -29,6 +33,8 @@ export class Documento {
     set tipoDocumento(tipoDocumento: string) {
         this._tipoDocumento = tipoDocumento;
     }
+
+
 
     toString() {
         return `

@@ -1,12 +1,11 @@
 import { PacienteRepository } from "../Infrastructure/PacienteRepository";
 
-export class RemoverPaciente{
+export class ListarPacientes{
 
     constructor(private repository = new PacienteRepository())
     {}
 
-    async execute(id: number){
-
-        await this.repository.removerPaciente(id);
+    async execute(){
+        return this.repository.listarPacientes();
     }
 }

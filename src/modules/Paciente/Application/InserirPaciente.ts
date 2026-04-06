@@ -1,6 +1,6 @@
 import { Endereco } from "@/modules/Endereco/Domain/Endereco";
-import { Paciente } from "../Domain/Paciente";
 import { PacienteRepository } from "../Infrastructure/PacienteRepository";
+import { Paciente } from "../Domain/Paciente";
 
 export class inserirDocumento{
 

@@ -1,6 +1,6 @@
 import { PacienteRepository } from "../Infrastructure/PacienteRepository";
 
-export class BuscarPacientePorId{
+export class BuscarDocumentoPorId{
 
     constructor(private repository = new PacienteRepository())
     {}

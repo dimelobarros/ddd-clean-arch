@@ -2,31 +2,28 @@
 
 import { useState } from "react";
 
-export function DocumentoForm({ dadoInicial, onSubmit }: any) {
-  const [numeroDocumento, setNumeroDocumento] = useState(
-    dadoInicial?.numeroDocumento || ""
-  );
-  const [tipoDocumento, setTipoDocumento] = useState(
-    dadoInicial?.tipoDocumento || ""
-  );
+export function DocumentoForm({dadoInicial, onSubmit}: any){
 
-  return (
-    <form
-      onSubmit={async e => {
-        e.preventDefault();
-        await onSubmit(numeroDocumento, tipoDocumento);
-      }}
-    >
-        <fieldset>
-            <legend>Dados do documento</legend>
-            Número do documento: <input type="text" value={numeroDocumento} 
-                onChange={e => setNumeroDocumento(e.target.value)}/><br />
+    const [numeroDocumento, setNumeroDocumento] = useState(dadoInicial?.numeroDocumento || "");
+    const [tipoDocumento, setTipoDocumento] = useState(dadoInicial?.tipoDocumento || "");
 
-            Tipo do documento: <input type="text" value={tipoDocumento} 
-                onChange={e => setTipoDocumento(e.target.value)}/><br />
+    return(
+
+        <form onSubmit = {async e => {
+                e.preventDefault();
+                await onSubmit(numeroDocumento, tipoDocumento);
+            }
+        } >
+            <fieldset>
+                <legend> Dados do documento</legend>
+                Número do documento: <input type="text" value={numeroDocumento} 
+                onChange={e => setNumeroDocumento(e.target.value)} /><br />
                 
-            <button type="submit">Salvar documento</button>
-        </fieldset>
-    </form>
-  );
+                Tipo do documento: <input type="text" value={tipoDocumento}
+                onChange={e => setTipoDocumento(e.target.value)} /> <br />
+                
+                <button type="submit"> Salvar documento </button>
+            </fieldset>
+        </form>
+    );
 }

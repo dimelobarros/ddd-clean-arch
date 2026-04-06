@@ -14,7 +14,7 @@ export class AtualizarPaciente {
         } else {
             pac.nome = nome;
             pac.genero = genero;
-            pac.idade = idade;
+            pac.idade = idade
             pac.peso = peso;
             pac.altura = altura;
             // ID DOCUMENTO

@@ -27,15 +27,17 @@ export class EnderecoRepository{
         EnderecoRepository.enderecos = EnderecoRepository.enderecos.filter(endereco => endereco.idEndereco !== idEndereco);
     }
 
-    // ATUALIZAR ENDEREÇO:
-    async atualizarEndereço(endereco: Endereco){
-        const indice = EnderecoRepository.enderecos.findIndex(doc => doc.idEndereco === endereco.idEndereco);
 
-        if(indice !== -1){
-            EnderecoRepository.enderecos[indice] = endereco;
-        }else{
-            console.log('Endereço não encontrado!')
+    // ATUALIZAR ENDEREÇO:
+    async atualizarEndereco(enderco: Endereco) {
+
+        // Buscando a posição em que o documento solicitado para autualizar está dentro do array.
+        const indice = EnderecoRepository.enderecos.findIndex(end => end.idEndereco === enderco.idEndereco);
+
+        if (indice !== -1) {
+            EnderecoRepository.enderecos[indice] = enderco;
+        } else {
+            console.log('Endereço não encontrado!');
         }
     }
-
 }
