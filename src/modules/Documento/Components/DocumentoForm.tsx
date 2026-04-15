@@ -1,29 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import { DocumentoFieldset } from "./DocumentoFieldset";
 
-export function DocumentoForm({dadoInicial, onSubmit}: any){
+export function DocumentoForm({ onSubmit, dadoInicial }: any) {
 
-    const [numeroDocumento, setNumeroDocumento] = useState(dadoInicial?.numeroDocumento || "");
-    const [tipoDocumento, setTipoDocumento] = useState(dadoInicial?.tipoDocumento || "");
+    const [documento, setDocumento] = useState<any>(dadoInicial || {});
 
-    return(
+    return (
+        <form onSubmit={async (e) => {
+            e.preventDefault();
+            await onSubmit(documento);
+        }}>
+            <DocumentoFieldset
+                dadoInicial={dadoInicial}
+                onChange={setDocumento}
+            />
 
-        <form onSubmit = {async e => {
-                e.preventDefault();
-                await onSubmit(numeroDocumento, tipoDocumento);
-            }
-        } >
-            <fieldset>
-                <legend> Dados do documento</legend>
-                Número do documento: <input type="text" value={numeroDocumento} 
-                onChange={e => setNumeroDocumento(e.target.value)} /><br />
-                
-                Tipo do documento: <input type="text" value={tipoDocumento}
-                onChange={e => setTipoDocumento(e.target.value)} /> <br />
-                
-                <button type="submit"> Salvar documento </button>
-            </fieldset>
+            <button type="submit">Salvar documento</button>
         </form>
     );
 }
